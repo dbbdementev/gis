@@ -1,4 +1,8 @@
-Название файла  | Содержание файла
+Installation
+------------
+Make sure that the release file is unpacked. You will see the following files.
+
+file name  | contents of the file
 ----------------|----------------------
 [gis.py](https://github.com/dbbdementev/gis/blob/master/gis.py)       | main module with code
 [test_time.py](https://github.com/dbbdementev/gis/blob/master/test_time.py)       | module for testing the speed of the program
@@ -7,6 +11,9 @@
 [testdata-small.csv](https://github.com/dbbdementev/gis/blob/master/testdata-small.csv)    | base with initial data
 [readme.md](https://github.com/dbbdementev/gis/blob/master/readme.md)    | this file
 
+
+Recommendations
+------------
 
 To run the program in the console, use the code: gis.py -i testdata-small.csv -o result.csv.
 The code works well for a small amount of data, for large sizes it is necessary to change the structure of the code to read
