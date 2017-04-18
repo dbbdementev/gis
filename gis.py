@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 Algorithm for selecting the best hypothesis using the internal python library.
-To run the program , use the code:  -i testdata-small.csv -o result.csv.
-The code works well for a small amount of data, for large sizes it is necessary to change the structure of the code to read.
-Data occurred not entirely, but, for example, line by line.
-At start in linux it is necessary to delete the encoding encoding = 'utf-8'.
+To run the program in the console, use the code: gis.py -i testdata-small.csv -o result.csv.
+The code works well for a small amount of data, for large sizes it is necessary to change the code structure
+and read the data line by line.
 """
 
 import getopt
@@ -15,7 +14,7 @@ from difflib import SequenceMatcher
 
 from translate import translate
 
-# Coefficient that allows you to change the importance of the search criteria: by name and address
+# Coefficient that allows you to change the importance of the search criteria: name and address
 NAME_FACTOR = 1
 ADDRESS_FACTOR = 1
 
@@ -26,7 +25,7 @@ def prepare_name(name):
     return name
 
 
-# Function which, which leads the address to normal in view of
+# Function for convert the address to normal format
 def prepare_address(address):
     transtable = (
         (r"\s\s+", " "),
