@@ -2,7 +2,7 @@ Installation
 ------------
 Make sure that the release file is unpacked. You will see the following files.
 
-file name  | contents of the file
+File name  | Contents of the file
 ----------------|----------------------
 [gis.py](https://github.com/dbbdementev/gis/blob/master/gis.py)       | main module with code
 [test_time.py](https://github.com/dbbdementev/gis/blob/master/test_time.py)       | module for testing the speed of the program
@@ -18,4 +18,4 @@ Recommendations
 To run the program in the console, use the code: gis.py -i testdata-small.csv -o result.csv.
 The code works well for a small amount of data, for large sizes it is necessary to change the structure of the code to read
 Data occurred not entirely, but, for example, line by line.
-At start in linux it is necessary to delete the encoding encoding = 'utf-8'
+At start in linux it is necessary to delete the encoding encoding = 'utf-8'.
