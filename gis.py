@@ -1,5 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+"""
+Algorithm for selecting the best hypothesis using the internal python library.
+To run the program , use the code:  -i testdata-small.csv -o result.csv.
+The code works well for a small amount of data, for large sizes it is necessary to change the structure of the code to read.
+Data occurred not entirely, but, for example, line by line.
+At start in linux it is necessary to delete the encoding encoding = 'utf-8'.
+"""
 
 import getopt
 import re
@@ -8,6 +15,7 @@ from difflib import SequenceMatcher
 
 from translate import translate
 
+# Coefficient that allows you to change the importance of the search criteria: by name and address
 NAME_FACTOR = 1
 ADDRESS_FACTOR = 1
 
@@ -18,6 +26,7 @@ def prepare_name(name):
     return name
 
 
+# Function which, which leads the address to normal in view of
 def prepare_address(address):
     transtable = (
         (r"\s\s+", " "),
@@ -44,6 +53,7 @@ def main(input_file_main, output_file_main):
     with open(input_file_main, 'r', encoding='utf-8') as f:
         with open(output_file_main, 'w', encoding='utf-8') as file_result:
             list_file = [line.split(';') for line in f]
+            # Create a dictionary where the key is a unique id of the organization
             id_dict = {}
             for line in list_file:
                 org_id = line[0]
@@ -53,9 +63,11 @@ def main(input_file_main, output_file_main):
             line_result = ''
             for org_id in id_dict:
                 index = 0
+                # Determines the best hypothesis
                 for line_list_file in id_dict[org_id]:
                     ext_address = prepare_address(line_list_file[5])
                     ext_name = prepare_name(line_list_file[4])
+                    # Using the standard difflib library
                     name_compare = SequenceMatcher(lambda x: x in ' "', line_list_file[1], ext_name)
                     address_compare = SequenceMatcher(lambda y: y in ' "', line_list_file[2], ext_address)
                     name_value = name_compare.ratio()
