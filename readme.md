@@ -1,13 +1,14 @@
 Название файла  | Содержание файла
 ----------------|----------------------
-[gis.py](https://github.com/dbbdementev/gis/blob/master/gis.py)       | главный модуль с кодом
-[test_time.py](https://github.com/dbbdementev/gis/blob/master/test_time.py)       | тестирование на скорость работы программы
-[translate.py](https://github.com/dbbdementev/gis/blob/master/translate.py)   | перевод с транскрипции на русский
-[result.csv](https://github.com/dbbdementev/gis/blob/master/result.csv)       | результат выполнения кода программы
-[testdata-small.csv](https://github.com/dbbdementev/gis/blob/master/testdata-small.csv)    | база с начальными данными
+[gis.py](https://github.com/dbbdementev/gis/blob/master/gis.py)       | main module with code
+[test_time.py](https://github.com/dbbdementev/gis/blob/master/test_time.py)       | module for testing the speed of the program
+[translate.py](https://github.com/dbbdementev/gis/blob/master/translate.py)   | module used to translate text from translit to Russian
+[result.csv](https://github.com/dbbdementev/gis/blob/master/result.csv)       | result of program execution
+[testdata-small.csv](https://github.com/dbbdementev/gis/blob/master/testdata-small.csv)    | base with initial data
+[readme.md](https://github.com/dbbdementev/gis/blob/master/readme.md)    | this file
 
 
-Для запуска программы в консоле используйте код gis.py -i testdata-small.csv -o result.csv.
-Код хорошо работает при небольшом объёме данных, при больших размерах нужно изменить структуру кода, чтобы чтение
-данных происходило не целиком, а, например построчно.
-при запуске в linux нужно удалить кодировку encoding='utf-8'
+To run the program in the console, use the code: gis.py -i testdata-small.csv -o result.csv.
+The code works well for a small amount of data, for large sizes it is necessary to change the structure of the code to read
+Data occurred not entirely, but, for example, line by line.
+At start in linux it is necessary to delete the encoding encoding = 'utf-8'
